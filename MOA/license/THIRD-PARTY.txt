@@ -1,0 +1,9 @@
+
+Lists of 7 third-party dependencies.
+     (GNU Lesser General Public License 3.0) SizeOf Agent (com.googlecode.sizeofag:sizeofag:1.0.0 - https://code.google.com/p/sizeofag/)
+     (Public Domain) JAMA (gov.nist.math:jama:1.0.3 - http://math.nist.gov/javanumerics/jama/)
+     (GNU General Public License 3) meka (net.sf.meka:meka:1.9.0 - http://meka.sourceforge.net/)
+     (CUP Parser Generator Copyright Notice, License, and Disclaimer) Java CUP Parser Generator (net.sf.squirrel-sql.thirdparty-non-maven:java-cup:0.11a - http://www2.cs.tum.edu/projects/cup/)
+     (GNU Lesser General Public License 2.1) GNU Trove (net.sf.trove4j:trove4j:3.0.3 - http://trove4j.sf.net)
+     (GNU General Public License 3) weka-dev (nz.ac.waikato.cms.weka:weka-dev:3.7.12 - http://www.cms.waikato.ac.nz/ml/weka/)
+     (GNU Lesser General Public License 2.1) Pentaho Package Manager (org.pentaho.pentaho-commons:pentaho-package-manager:1.0.8 - http://source.pentaho.org/svnroot/pentaho-commons/pentaho-package-manager/)
