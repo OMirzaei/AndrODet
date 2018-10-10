@@ -31,9 +31,9 @@ USAGE:
 
 AndrODet has one main module which is used for feature extraction, testing and training incrementally. To run AndrODet, you need to build up your dataset of obfuscated apps initially. Three sub-directories are needed to be considered for this purpose within your apps directory, including IR, SE and CF which do contain apps that are either obfuscated ('YES') or not ('NO') by one of the following techniques:
 
-1. identifier renaming
-2. string encryption
-3. control flow obfuscation 
+1. Identifier renaming
+2. String encryption
+3. Control flow obfuscation 
 
 In the next step, you just need to run the below command in the terminal to start AndrODet:
 
