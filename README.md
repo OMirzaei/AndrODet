@@ -4,7 +4,7 @@ AndrODet: An Adaptive Android Obfuscation Detector
 VERSION:
 ------------
 
-Version (by release date): 2018-07-26
+Version (by release date): 2019-11-25
 
 DEVELOPER INFORMATION:
 ------------------------------------
@@ -24,7 +24,10 @@ Future Generation Computer Systems, Elsevier (January 2019) <br />
 INSTALLATION INSTRUCTIONS:
 ----------------------------------------
 
-Before using AndrODet, you only need to install python 2.7.11 on your system successfully. Moreover, you might need to install some python modules which are not commonly included in the regular installation of python and have been used in our scripts.
+AndrODet is now upgraded to be compatible with python 3. There are two ways through which you can easily install and run TriFlow:
+
+1\. pipenv install & pipenv shell <br />
+2\. pip install -U -r requirements.txt <br />
 
 USAGE:
 ---------
