@@ -3,7 +3,7 @@
 VERSION:
 -------
 
-Version (by release date): 2018-07-26
+Version (by release date): 2019-11-25
 
 DEVELOPER INFORMATION:
 ---------------------
@@ -64,7 +64,6 @@ python AndrODet_MOA.py -a '/Directory/of/apps' -d '/Directory/of/dexdump' -g '/D
 # ************************ Importing Modules ************************
 
 import os
-from sets import Set
 import subprocess
 import multiprocessing
 from optparse import OptionParser
@@ -205,7 +204,7 @@ def feature_extraction(appfile, IR_module, SE_module, CF_module):
             features_CF.append(Real_Classes[app_name][2])
             return app_name, features_IR, features_SE, features_CF
     except:
-        print 'features extraction failed for app', appfile
+        print('features extraction failed for app', appfile)
 
 
 def detect_obfuscation(IR_arff_fie, SE_arff_fie, CF_arff_fie):
@@ -220,7 +219,7 @@ def detect_obfuscation(IR_arff_fie, SE_arff_fie, CF_arff_fie):
 
         return predict_output_IR, predict_output_SE, predict_output_CF
     except:
-        print 'System could not successfully analyze app %s!' %app_name
+        print('System could not successfully analyze app %s!' %app_name)
         pass
 
 def confusion_matrix_update(conf_matrix, real_classes, predicted_classes):
@@ -249,7 +248,7 @@ if __name__ == '__main__':
 
     IR_module, SE_module, CF_module = set_learners()
 
-    all_apks = Set([])                  # To discard possible redundant apk files
+    all_apks = set()                  # To discard possible redundant apk files
     for root, directories, filenames in os.walk(options.apps_dir):
         for filename in filenames:
             if '.DS_Store' not in filename  and '.apk' in filename:
@@ -306,7 +305,7 @@ if __name__ == '__main__':
         predicted_classes = predict_output_IR[idx].split(',')[0] + predict_output_SE[idx].split(',')[0] + predict_output_CF[idx].split(',')[0]
         conf_matrix = confusion_matrix_update(conf_matrix, real_classes, predicted_classes)
 
-    print 'Confusion Matrix:'
-    print conf_matrix
+    print('Confusion Matrix:')
+    print(conf_matrix)
 # ********************* End of Main Body *********************
 
