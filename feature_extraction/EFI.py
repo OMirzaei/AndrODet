@@ -3,7 +3,7 @@
 VERSION:
 -------
 
-Version (by release date): 2018-07-26
+Version (by release date): 2019-11-25
 
 DEVELOPER INFORMATION:
 ---------------------
@@ -56,7 +56,6 @@ import subprocess
 import re
 import sys
 from tqdm import *
-from sets import Set
 import arff
 
 # ************************ End of Importing Modules ************************
@@ -181,9 +180,9 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
     dirname,filename = os.path.split(appfile)
     Dict_Features[filename] = []
     all_features = []
-    fields = Set([])
-    methods = Set([])
-    classes = Set([])
+    fields = set()
+    methods = set()
+    classes = set()
 
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
@@ -194,9 +193,9 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
             dex_file = open(dex_path, 'rb')                                                                        # Opens the diassembled .dex file
             lines = dex_file.read()                                                                                # Reading all lines of the .dex file
             current_fields, current_methods, current_classes = Extract_Identifiers(lines)                          # Extracting all the identifiers from the .dex file
-            fields = fields | Set(current_fields)
-            methods = methods | Set(current_methods)
-            classes = classes | Set(current_classes)
+            fields = fields | set(current_fields)
+            methods = methods | set(current_methods)
+            classes = classes | set(current_classes)
         fields = list(fields)
         methods = list(methods)
         classes = list(classes)
@@ -207,7 +206,7 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
         sum_flds_L2 = 0
         sum_flds_L3 = 0
         num_fields = len(fields)
-        print 'Extracting fields\' features from %s:' %filename
+        print('Extracting fields\' features from %s:' %filename)
         for idx in trange(0, num_fields):
             sum_wordsize_flds += sys.getsizeof(fields[idx])
             if idx < num_fields - 1:
@@ -239,7 +238,7 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
         sum_mtds_L2 = 0
         sum_mtds_L3 = 0
         num_methods = len(methods)
-        print 'Extracting methods\' features from %s:' %filename
+        print('Extracting methods\' features from %s:' %filename)
         for idx in trange(0, num_methods):
             sum_wordsize_mtds += sys.getsizeof(methods[idx])
             if idx < num_methods - 1:
@@ -271,7 +270,7 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
         sum_cls_L2 = 0
         sum_cls_L3 = 0
         num_classes = len(classes)
-        print 'Extracting classes\' features from %s:' %filename
+        print('Extracting classes\' features from %s:' %filename)
         for idx in trange(0, num_classes):
             sum_wordsize_cls += sys.getsizeof(classes[idx])
             if idx < num_classes - 1:
@@ -297,7 +296,7 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
         all_features.append(sum_cls_L3)
         
     except:
-        print 'APK file \'%s\' was corrupted!' %filename
+        print('APK file \'%s\' was corrupted!' %filename)
 
     shutil.rmtree(os.path.join(output_dir, filename[:-4]))
     return all_features

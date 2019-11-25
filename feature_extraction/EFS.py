@@ -3,7 +3,7 @@
 VERSION:
 -------
 
-Version (by release date): 2018-07-26
+Version (by release date): 2019-11-25
 
 DEVELOPER INFORMATION:
 ---------------------
@@ -59,7 +59,6 @@ import sys
 from collections import Counter
 import math
 from tqdm import tqdm
-from sets import Set
 import numpy as np
 import arff
 
@@ -151,7 +150,7 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
     dirname,filename = os.path.split(appfile)
     Dict_Features[filename] = []
     all_features = []
-    strings = Set([])
+    strings = set()
 
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
@@ -161,10 +160,10 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
         for dex_path in dex_file_paths:
             dex_file = open(dex_path, 'rb')                                                                     # Opens the diassembled .dex file
             lines = dex_file.read()                                                                             # Reading all lines of the .dex file
-            current_strings = Set(extract_strings(lines))                                                       # Extracting all the strings from the .dex file
+            current_strings = set(extract_strings(lines))                                                       # Extracting all the strings from the .dex file
             strings = strings | current_strings
         # ---------------------- Extracting strings' features ---------------------- 
-        print 'Extracting strings\' features from %s:' %filename
+        print('Extracting strings\' features from %s:' %filename)
         for strg in tqdm(strings):
             Dict_Strings[strg] = []
             strg_entropy = entropy.shannon_entropy(strg)                                                        # Calculates the shannon entropy of string
@@ -216,7 +215,7 @@ def extract_features(appfile, apps_dir, dexdump_dir, output_dir):
         all_features.append(round(avg_sum_freq_chars_h1, 4))
 
     except:
-        print 'APK file \'%s\' was corrupted!' %filename
+        print('APK file \'%s\' was corrupted!' %filename)
 
     shutil.rmtree(os.path.join(output_dir,filename[:-4]))
     return all_features

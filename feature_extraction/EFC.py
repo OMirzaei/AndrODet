@@ -3,7 +3,7 @@
 VERSION:
 -------
 
-Version (by release date): 2018-07-26
+Version (by release date): 2019-11-25
 
 DEVELOPER INFORMATION:
 ---------------------
@@ -122,7 +122,7 @@ def Extract_Features_CFGs(appfile, androguard_dir, output_dir):
                 num_leafs += 1
         num_edges = len(cf_graph.edges())
     except:
-        print 'Androguard failed in analyzing app %s' %(app_dir_name + '.apk')
+        print('Androguard failed in analyzing app %s' %(app_dir_name + '.apk'))
 
     return num_nodes, num_leafs, num_edges
 
@@ -139,14 +139,14 @@ def extract_features(appfile, apps_dir, androguard_dir, dexdump_dir, output_dir)
     lines_of_code = 0
 
     try:
-        print 'Extracting CFG features from %s:' %filename
+        print('Extracting CFG features from %s:' %filename)
         # --------------- Extracting control flow graph features ---------------
         num_nodes, num_leafs, num_edges = Extract_Features_CFGs(appfile, androguard_dir, output_dir)
         # --------------- End of Extracting control flow graph features ---------------
         
         # --------------- Extracting code features ---------------
 
-        print 'Extracting code features from %s:' %filename
+        print('Extracting code features from %s:' %filename)
         # ---------------------- Extracting features from Smali ----------------------
         dex_file_paths = DisAssemble_Dex(appfile, dexdump_dir, output_dir)
         for dex_path in dex_file_paths:
@@ -172,7 +172,7 @@ def extract_features(appfile, apps_dir, androguard_dir, dexdump_dir, output_dir)
         all_features.append(file_size)
 
     except:
-        print 'APK file \'%s\' was corrupted!' %filename
+        print('APK file \'%s\' was corrupted!' %filename)
     
     if filename[:-4] + '.xgmml' in os.listdir(output_dir):
         os.remove(os.path.join(output_dir, filename[:-4] + '.xgmml'))
