@@ -24,7 +24,7 @@ Future Generation Computer Systems, Elsevier (January 2019) <br />
 INSTALLATION INSTRUCTIONS:
 ----------------------------------------
 
-AndrODet is now upgraded to be compatible with python 3. There are two ways through which you can easily install and run TriFlow:
+AndrODet is now upgraded to be compatible with python 3. There are two ways through which you can easily install and run AndrODet:
 
 1\. pipenv install & pipenv shell <br />
 2\. pip install -U -r requirements.txt <br />
