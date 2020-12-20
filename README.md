@@ -12,7 +12,7 @@ DEVELOPER INFORMATION:
 Name: Omid Mirzaei <br />
 Laboratory: Computer Security Lab (COSEC) <br />
 University: Universidad Carlos III de Madrid <br />
-Website: https://cosec.inf.uc3m.es/~omid-mirzaei/androdet.html <br />
+Website: https://omirzaei.github.io/software/AndrODet <br />
 
 PUBLICATION:
 ------------------
