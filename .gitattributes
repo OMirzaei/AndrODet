@@ -1,3 +1,2 @@
-MOA/*.html linguist-vendored=true
+MOA/* linguist-vendored=true
 androguard-master/* linguist-vendored=true
-androguard-master/*.py linguist-vendored=false
