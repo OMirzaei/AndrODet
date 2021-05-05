@@ -1,2 +1,3 @@
-MOA/* linguist-vendored
-androguard-master/* linguist-vendored
+MOA/* linguist-vendored=true
+MOA/doc/apidocs/moa/* linguist-vendored=true
+androguard-master/* linguist-vendored=true
