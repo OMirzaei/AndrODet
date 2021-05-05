@@ -1,2 +1,1 @@
-MOA/doc/apidocs/moa/tasks/*.html linguist-vendored=true
-MOA/doc/apidocs/moa/gui/class-use linguist-vendored=true
+MOA/** linguist-vendored=true
