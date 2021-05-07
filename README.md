@@ -17,7 +17,7 @@ Website: https://0m1d.com/software/AndrODet <br />
 PUBLICATION:
 ------------------
 
-AndrODet: An Adaptive Android Obfuscation Detector <br />
+[AndrODet: An Adaptive Android Obfuscation Detector](https://0m1d.com/assets/pdf/J5.pdf) <br />
 O. Mirzaei, J. M. de Fuentes, J. E. Tapiador, L. Gonzalez-Manzano <br />
 Future Generation Computer Systems, Elsevier (January 2019) <br />
 
