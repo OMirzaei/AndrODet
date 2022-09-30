@@ -1,6 +1,6 @@
 decorator==4.4.1
 entropy==0.11
-joblib==0.14.0
+joblib==1.2.0
 liac-arff==2.4.0
 networkx==2.4
 networkxgmml==0.1.6
